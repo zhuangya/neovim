@@ -24,3 +24,4 @@ plugin({
 })
 
 plugin({ 'akinsho/nvim-bufferline.lua', config = conf.nvim_bufferline, requires = 'kyazdani42/nvim-web-devicons' })
+plugin({ 'lewis6991/gitsigns.nvim', config = conf.gitsigns, requires = 'nvim-lua/plenary.nvim' })
