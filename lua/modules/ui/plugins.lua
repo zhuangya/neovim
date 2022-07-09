@@ -29,4 +29,5 @@ plugin({
   'lukas-reineke/indent-blankline.nvim',
   config = conf.indent_blankline,
   requires = 'nvim-treesitter/nvim-treesitter',
+  after = 'nvim-treesitter',
 })
