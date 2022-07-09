@@ -15,3 +15,8 @@ plugin({
     { 'nvim-telescope/telescope-fzy-native.nvim', opt = true },
   },
 })
+
+plugin({
+  'sbdchd/neoformat',
+  cmd = 'Neoformat',
+})
