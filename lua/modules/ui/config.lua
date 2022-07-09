@@ -55,13 +55,13 @@ function config.nvim_tree()
 end
 
 function config.gitsigns()
-  require("gitsigns").setup {
+  require('gitsigns').setup({
     signs = {
-      add = { hl = "GitSignsAdd", text = "▍", numhl = "GitSignsAddNr" },
-      change = { hl = "GitSignsChange", text = "▍", numhl = "GitSignsChangeNr" },
-      delete = { hl = "GitSignsDelete", text = "▍", numhl = "GitSignsDeleteNr" },
-      topdelete = { hl = "GitSignsDelete", text = "▍", numhl = "GitSignsDeleteNr" },
-      changedelete = { hl = "GitSignsChange", text = "▍", numhl = "GitSignsChangeNr" },
+      add = { hl = 'GitSignsAdd', text = '▍', numhl = 'GitSignsAddNr' },
+      change = { hl = 'GitSignsChange', text = '▍', numhl = 'GitSignsChangeNr' },
+      delete = { hl = 'GitSignsDelete', text = '▍', numhl = 'GitSignsDeleteNr' },
+      topdelete = { hl = 'GitSignsDelete', text = '▍', numhl = 'GitSignsDeleteNr' },
+      changedelete = { hl = 'GitSignsChange', text = '▍', numhl = 'GitSignsChangeNr' },
     },
     signcolumn = true,
     numhl = true,
@@ -73,21 +73,21 @@ function config.gitsigns()
     current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {
       virt_text = true,
-      virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+      virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
       delay = 300,
       ignore_whitespace = false,
     },
 
-    current_line_blame_formatter = "<author>(<author_time:%Y-%m-%d>): <summary>",
+    current_line_blame_formatter = '<author>(<author_time:%Y-%m-%d>): <summary>',
     sign_priority = 6,
     update_debounce = 100,
     status_formatter = nil, -- Use default
     max_file_length = 4000,
     preview_config = {
       -- Options passed to nvim_open_win
-      border = "single",
-      style = "minimal",
-      relative = "cursor",
+      border = 'single',
+      style = 'minimal',
+      relative = 'cursor',
       row = 2,
       col = 1,
     },
@@ -104,46 +104,46 @@ function config.gitsigns()
       end
 
       -- Navigation
-      map("n", ")", function()
+      map('n', ')', function()
         if vim.wo.diff then
-          return "]c"
+          return ']c'
         end
         vim.schedule(function()
           gs.next_hunk()
         end)
-        return "<Ignore>"
+        return '<Ignore>'
       end, { expr = true })
 
-      map("n", "(", function()
+      map('n', '(', function()
         if vim.wo.diff then
-          return "[c"
+          return '[c'
         end
         vim.schedule(function()
           gs.prev_hunk()
         end)
-        return "<Ignore>"
+        return '<Ignore>'
       end, { expr = true })
 
-      map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>")
-      map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>")
-      map("n", "<leader>hS", gs.stage_buffer)
-      map("n", "<leader>hu", gs.undo_stage_hunk)
-      map("n", "<leader>hR", gs.reset_buffer)
-      map("n", "<leader>hp", gs.preview_hunk)
-      map("n", "<leader>hb", function()
-        gs.blame_line { full = true }
+      map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+      map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+      map('n', '<leader>hS', gs.stage_buffer)
+      map('n', '<leader>hu', gs.undo_stage_hunk)
+      map('n', '<leader>hR', gs.reset_buffer)
+      map('n', '<leader>hp', gs.preview_hunk)
+      map('n', '<leader>hb', function()
+        gs.blame_line({ full = true })
       end)
-      map("n", "<leader>tb", gs.toggle_current_line_blame)
-      map("n", "<leader>hd", gs.diffthis)
-      map("n", "<leader>hD", function()
-        gs.diffthis "~"
+      map('n', '<leader>tb', gs.toggle_current_line_blame)
+      map('n', '<leader>hd', gs.diffthis)
+      map('n', '<leader>hD', function()
+        gs.diffthis('~')
       end)
-      map("n", "<leader>td", gs.toggle_deleted)
+      map('n', '<leader>td', gs.toggle_deleted)
 
       -- Text object
-      map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+      map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end,
-  }
+  })
 end
 
 return config
