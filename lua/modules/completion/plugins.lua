@@ -15,7 +15,7 @@ plugin({
 
 plugin({
   'hrsh7th/nvim-cmp',
-  event = 'BufReadPre',
+  -- event = 'BufReadPre',
   config = conf.nvim_cmp,
   requires = {
     { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
