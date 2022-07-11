@@ -7,13 +7,14 @@ local conf = require('modules.completion.config')
 
 plugin({
   'neovim/nvim-lspconfig',
-  -- used filetype to lazyload lsp
-  -- config your language filetype in here
-  ft = { 'lua', 'rust', 'javascript', 'typescript', 'typescriptreact', 'markdown' },
   config = conf.nvim_lsp,
 })
 
 plugin({ 'glepnir/lspsaga.nvim', branch = 'main', config = conf.lspsaga })
+plugin({
+  'williamboman/nvim-lsp-installer',
+  config = conf.lsp_installer,
+})
 
 plugin({
   'hrsh7th/nvim-cmp',

@@ -7,13 +7,26 @@ local config = {}
 -- config server in this function
 function config.nvim_lsp()
   local api = vim.api
-  local home = os.getenv('HOME')
   local lspconfig = require('lspconfig')
   local format = require('modules.completion.format')
+  require('nvim-lsp-installer').setup({})
 
   local servers = {
     'tsserver',
     'sumneko_lua',
+    'tailwindcss',
+    'rust_analyzer',
+    'sumneko_lua',
+    'clangd',
+    'cssls',
+    'eslint',
+    'graphql',
+    'html',
+    'jsonls',
+    'pyright',
+    'tailwindcss',
+    'tsserver',
+    'zk',
   }
 
   local saga = require('lspsaga')
@@ -23,10 +36,6 @@ function config.nvim_lsp()
       enable = true,
     },
   })
-
-  local on_attach = function() end
-
-  -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -198,6 +207,10 @@ function config.lua_snip()
   require('luasnip.loaders.from_vscode').lazy_load({
     paths = { './snippets/' },
   })
+end
+
+function config.lsp_installer()
+  -- require('nvim-lsp-installer').setup({})
 end
 
 return config
