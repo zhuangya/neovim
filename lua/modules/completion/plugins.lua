@@ -10,7 +10,6 @@ plugin({
   config = conf.nvim_lsp,
 })
 
-plugin({ 'glepnir/lspsaga.nvim', branch = 'main', config = conf.lspsaga })
 plugin({
   'williamboman/nvim-lsp-installer',
   config = conf.lsp_installer,

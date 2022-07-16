@@ -7,13 +7,12 @@ local conf = require('modules.ui.config')
 
 plugin({ 'glepnir/zephyr-nvim', config = conf.zephyr })
 
-plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
-
 plugin({
-  'glepnir/galaxyline.nvim',
-  branch = 'main',
-  config = conf.galaxyline,
-  requires = 'kyazdani42/nvim-web-devicons',
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
 })
 
 plugin({

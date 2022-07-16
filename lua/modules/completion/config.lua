@@ -29,14 +29,6 @@ function config.nvim_lsp()
     'zk',
   }
 
-  local saga = require('lspsaga')
-  saga.init_lsp_saga({
-    -- symbols in winbar
-    symbol_in_winbar = {
-      enable = true,
-    },
-  })
-
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
