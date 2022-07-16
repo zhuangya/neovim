@@ -1,4 +1,3 @@
-
 local keymap = require('core.keymap')
 local nmap, xmap = keymap.nmap, keymap.xmap
 local noremap = keymap.noremap
@@ -13,6 +12,7 @@ xmap({ ' ', '', opts(noremap) })
 
 local wk = require('which-key')
 
+-- with <leader>:
 wk.register({
   p = {
     name = 'Packer',
@@ -24,11 +24,23 @@ wk.register({
     name = 'LSP',
     i = { '<cmd>LspInfo<cr>', 'Lsp Info' },
     l = { '<cmd>LspLog<cr>', 'Lsp Log' },
-    r = { '<cmd>LspRestart<cr>', 'Lsp Restart' },
+    x = { '<cmd>LspRestart<cr>', 'Lsp Restart' },
+    r = {
+      function()
+        vim.lsp.buf.rename()
+      end,
+      'Rename',
+    },
+    a = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      'Code Action',
+    },
   },
   n = {
     name = 'NeoFormat',
-    f = { '<cmd>Neoformat<cr>', 'NeoFormat' }
+    f = { '<cmd>Neoformat<cr>', 'NeoFormat' },
   },
   t = {
     name = 'Nvim Tree',
@@ -40,5 +52,35 @@ wk.register({
     f = { '<cmd>Telescope find_files<cr>', 'file' },
     g = { '<cmd>Telescope git_files<cr>', 'Git Files' },
     m = { '<cmd>Telescope oldfiles<cr>', 'Recent Files' },
-  }
+  },
 }, { prefix = '<leader>' })
+
+-- without <leader>:
+wk.register({
+  ['[d'] = {
+    function()
+      vim.diagnostic.goto_prev()
+    end,
+    'Previous Diagnostic',
+  },
+  [']d'] = {
+    function()
+      vim.diagnostic.goto_next()
+    end,
+    'Next Diagnostic',
+  },
+  g = {
+    d = {
+      function()
+        vim.lsp.buf.definition()
+      end,
+      'Go To Definition',
+    },
+    i = {
+      function()
+        vim.lsp.buf.implementation()
+      end,
+      'Implementation',
+    },
+  },
+})
