@@ -31,3 +31,5 @@ plugin({
   requires = 'nvim-treesitter/nvim-treesitter',
   after = 'nvim-treesitter',
 })
+plugin({ 'sunjon/Shade.nvim' })
+plugin({ 'nxvu699134/vn-night.nvim' })
