@@ -1,29 +1,44 @@
--- author: glepnr https://github.com/glepnir
--- date: 2022-07-02
--- License: MIT
--- recommend plugins key defines in this file
 
-require('keymap.config')
-local key = require('core.keymap')
-local nmap = key.nmap
-local silent, noremap = key.silent, key.noremap
-local opts = key.new_opts
-local cmd = key.cmd
+local keymap = require('core.keymap')
+local nmap, xmap = keymap.nmap, keymap.xmap
+local noremap = keymap.noremap
+local opts = keymap.new_opts
 
--- usage of plugins
-nmap({
-  -- packer
-  { '<Leader>pu', cmd('PackerUpdate'), opts(noremap, silent) },
-  { '<Leader>pi', cmd('PackerInstall'), opts(noremap, silent) },
-  { '<Leader>pc', cmd('PackerCompile'), opts(noremap, silent) },
-  -- Lsp
-  { '<Leader>li', cmd('LspInfo'), opts(noremap, silent) },
-  { '<Leader>ll', cmd('LspLog'), opts(noremap, silent) },
-  { '<Leader>lr', cmd('LspRestart'), opts(noremap, silent) },
-  -- nvimtree
-  { '<Leader>e', cmd('NvimTreeToggle'), opts(noremap, silent) },
-  -- Telescope
-  { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
-  { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
-})
+-- Use space as leader key
+vim.g.mapleader = ' '
+
+-- leaderkey
+nmap({ ' ', '', opts(noremap) })
+xmap({ ' ', '', opts(noremap) })
+
+local wk = require('which-key')
+
+wk.register({
+  p = {
+    name = 'Packer',
+    u = { '<cmd>PackerUpdate<cr>', 'Packer Update' },
+    i = { '<cmd>PackerInstall<cr>', 'Packer Install' },
+    c = { '<cmd>PackerCompile<cr>', 'Packer Compile' },
+  },
+  l = {
+    name = 'LSP',
+    i = { '<cmd>LspInfo<cr>', 'Lsp Info' },
+    l = { '<cmd>LspLog<cr>', 'Lsp Log' },
+    r = { '<cmd>LspRestart<cr>', 'Lsp Restart' },
+  },
+  n = {
+    name = 'NeoFormat',
+    f = { '<cmd>Neoformat<cr>', 'NeoFormat' }
+  },
+  t = {
+    name = 'Nvim Tree',
+    t = { '<cmd>NvimTreeToggle<cr>', 'Nvim Tree' },
+    f = { '<cmd>NvimTreeFindFile<cr>', 'Nvim Tree Find File' },
+  },
+  f = {
+    name = 'Files!',
+    f = { '<cmd>Telescope find_files<cr>', 'file' },
+    g = { '<cmd>Telescope git_files<cr>', 'Git Files' },
+    m = { '<cmd>Telescope oldfiles<cr>', 'Recent Files' },
+  }
+}, { prefix = '<leader>' })
