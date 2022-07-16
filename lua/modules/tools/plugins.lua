@@ -2,10 +2,10 @@
 -- date: 2022-07-02
 -- License: MIT
 
-local plugin = require('core.pack').register_plugin
+local use = require('core.pack').register_plugin
 local conf = require('modules.tools.config')
 
-plugin({
+use({
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
   config = conf.telescope,
@@ -16,7 +16,7 @@ plugin({
   },
 })
 
-plugin({
+use({
   'sbdchd/neoformat',
   cmd = 'Neoformat',
 })

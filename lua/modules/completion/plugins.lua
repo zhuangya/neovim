@@ -2,20 +2,20 @@
 -- date: 2022-07-02
 -- License: MIT
 
-local plugin = require('core.pack').register_plugin
+local use = require('core.pack').register_plugin
 local conf = require('modules.completion.config')
 
-plugin({
+use({
   'neovim/nvim-lspconfig',
   config = conf.nvim_lsp,
 })
 
-plugin({
+use({
   'williamboman/nvim-lsp-installer',
   config = conf.lsp_installer,
 })
 
-plugin({
+use({
   'hrsh7th/nvim-cmp',
   -- event = 'InsertEnter',
   config = conf.nvim_cmp,
@@ -27,4 +27,4 @@ plugin({
   },
 })
 
-plugin({ 'L3MON4D3/LuaSnip', event = 'InsertEnter', config = conf.lua_snip })
+use({ 'L3MON4D3/LuaSnip', event = 'InsertEnter', config = conf.lua_snip })
