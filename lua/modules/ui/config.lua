@@ -4,6 +4,10 @@
 
 local config = {}
 
+function config.wilder()
+  require('wilder').setup({ modes = { ':', '/', '?' } })
+end
+
 function config.alpha()
   require('alpha').setup(require('alpha.themes.startify').config)
 end
@@ -144,6 +148,14 @@ function config.indent_blankline()
     space_char_blankline = ' ',
     show_current_context = true,
     show_current_context_start = true,
+  })
+end
+
+function config.which_key()
+  require('which-key').setup({
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
   })
 end
 

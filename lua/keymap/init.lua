@@ -68,7 +68,7 @@ wk.register({
     q = { '<cmd>TroubleToggle quickfix<cr>', 'Trouble Toggle in quickfix' },
     l = { '<cmd>TroubleToggle loclist<cr>', 'Trouble Toggle in loclist' },
     r = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble Toggle[LSP References]' },
-  }
+  },
 }, { prefix = '<leader>' })
 
 -- without <leader>:

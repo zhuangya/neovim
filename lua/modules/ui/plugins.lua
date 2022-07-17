@@ -5,6 +5,9 @@
 local use = require('core.pack').register_plugin
 local conf = require('modules.ui.config')
 
+use({ 'psliwka/vim-smoothie' })
+use({ 'gelguy/wilder.nvim', config = conf.wilder })
+
 use({ 'wuelnerdotexe/vim-enfocado', config = conf.enfocado })
 
 use({ 'folke/todo-comments.nvim', config = conf.todo })
@@ -18,7 +21,7 @@ use({
 
 use({
   'kyazdani42/nvim-tree.lua',
-  cmd = {'NvimTreeToggle', 'NvimTreeFindFile'},
+  cmd = { 'NvimTreeToggle', 'NvimTreeFindFile' },
   config = conf.nvim_tree,
   requires = 'kyazdani42/nvim-web-devicons',
 })
@@ -35,11 +38,5 @@ use({ 'sunjon/Shade.nvim' })
 use({ 'nxvu699134/vn-night.nvim' })
 use({
   'folke/which-key.nvim',
-  config = function()
-    require('which-key').setup({
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    })
-  end,
+  config = conf.which_key,
 })
