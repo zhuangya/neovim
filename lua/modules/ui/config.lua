@@ -4,8 +4,9 @@
 
 local config = {}
 
-function config.zephyr()
-  vim.cmd('colorscheme zephyr')
+function config.enfocado()
+  vim.g.enfocado_style = 'neon'
+  vim.cmd('colorscheme enfocado')
 end
 
 function config.galaxyline()

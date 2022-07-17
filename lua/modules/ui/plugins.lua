@@ -5,7 +5,7 @@
 local use = require('core.pack').register_plugin
 local conf = require('modules.ui.config')
 
-use({ 'glepnir/zephyr-nvim', config = conf.zephyr })
+use({ 'wuelnerdotexe/vim-enfocado', config = conf.enfocado })
 
 use({
   'goolord/alpha-nvim',
