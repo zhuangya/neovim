@@ -19,6 +19,7 @@ wk.register({
     u = { '<cmd>PackerUpdate<cr>', 'Packer Update' },
     i = { '<cmd>PackerInstall<cr>', 'Packer Install' },
     c = { '<cmd>PackerCompile<cr>', 'Packer Compile' },
+    s = { '<cmd>PackerSync<cr>', 'Packer Sync' },
   },
   l = {
     name = 'LSP',
@@ -57,6 +58,16 @@ wk.register({
     name = 'Search',
     l = { '<cmd>Telescope live_grep<cr>', 'live grep' },
     s = { '<cmd>Telescope grep_string<cr>', 'grep string' },
+  },
+  x = {
+    name = 'Troubles',
+    t = { '<cmd>TodoTrouble<cr>', 'Todo Trouble' },
+    x = { '<cmd>TroubleToggle<cr>', 'Trouble Toggle' },
+    w = { '<cmd>TroubleToggle workspace_diagnostic<cr>', 'Trouble Toggle for Workspace' },
+    d = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Trouble Toggle for Document' },
+    q = { '<cmd>TroubleToggle quickfix<cr>', 'Trouble Toggle in quickfix' },
+    l = { '<cmd>TroubleToggle loclist<cr>', 'Trouble Toggle in loclist' },
+    r = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble Toggle[LSP References]' },
   }
 }, { prefix = '<leader>' })
 

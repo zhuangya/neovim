@@ -4,6 +4,18 @@
 
 local config = {}
 
+function config.alpha()
+  require('alpha').setup(require('alpha.themes.startify').config)
+end
+
+function config.trouble()
+  require('trouble').setup({})
+end
+
+function config.todo()
+  require('todo-comments').setup({})
+end
+
 function config.enfocado()
   vim.g.enfocado_style = 'neon'
   vim.cmd('colorscheme enfocado')

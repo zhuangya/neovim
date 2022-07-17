@@ -7,17 +7,18 @@ local conf = require('modules.ui.config')
 
 use({ 'wuelnerdotexe/vim-enfocado', config = conf.enfocado })
 
+use({ 'folke/todo-comments.nvim', config = conf.todo })
+use({ 'folke/trouble.nvim', config = conf.trouble })
+
 use({
   'goolord/alpha-nvim',
   requires = { 'kyazdani42/nvim-web-devicons' },
-  config = function()
-    require('alpha').setup(require('alpha.themes.startify').config)
-  end,
+  config = conf.alpha,
 })
 
 use({
   'kyazdani42/nvim-tree.lua',
-  cmd = 'NvimTreeToggle',
+  cmd = {'NvimTreeToggle', 'NvimTreeFindFile'},
   config = conf.nvim_tree,
   requires = 'kyazdani42/nvim-web-devicons',
 })
