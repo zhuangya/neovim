@@ -8,11 +8,11 @@ local conf = require('modules.ui.config')
 use({ 'glepnir/zephyr-nvim', config = conf.zephyr })
 
 use({
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
+  'goolord/alpha-nvim',
+  requires = { 'kyazdani42/nvim-web-devicons' },
+  config = function()
+    require('alpha').setup(require('alpha.themes.startify').config)
+  end,
 })
 
 use({
@@ -32,13 +32,13 @@ use({
 })
 use({ 'sunjon/Shade.nvim' })
 use({ 'nxvu699134/vn-night.nvim' })
-use {
-  "folke/which-key.nvim",
+use({
+  'folke/which-key.nvim',
   config = function()
-    require("which-key").setup {
+    require('which-key').setup({
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-    }
-  end
-}
+    })
+  end,
+})
