@@ -53,6 +53,11 @@ wk.register({
     g = { '<cmd>Telescope git_files<cr>', 'Git Files' },
     m = { '<cmd>Telescope oldfiles<cr>', 'Recent Files' },
   },
+  s = {
+    name = 'Search',
+    l = { '<cmd>Telescope live_grep<cr>', 'live grep' },
+    s = { '<cmd>Telescope grep_string<cr>', 'grep string' },
+  }
 }, { prefix = '<leader>' })
 
 -- without <leader>:
