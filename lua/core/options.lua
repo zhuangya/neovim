@@ -33,7 +33,7 @@ vim.opt.smarttab = true
 vim.opt.shiftround = true
 vim.opt.timeout = true
 vim.opt.ttimeout = true
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 0
 vim.opt.ttimeoutlen = 10
 vim.opt.updatetime = 100
 vim.opt.redrawtime = 1500
@@ -43,7 +43,7 @@ vim.opt.infercase = true
 vim.opt.incsearch = true
 vim.opt.wrapscan = true
 vim.opt.complete = '.,w,b,k'
-vim.opt.inccommand = 'nosplit'
+vim.opt.inccommand = 'split'
 vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepprg = 'rg --hidden --vimgrep --smart-case --'
 vim.opt.breakat = [[\ \	;:,!?]]
@@ -84,7 +84,7 @@ vim.opt.winblend = 10
 vim.opt.undofile = true
 vim.opt.synmaxcol = 2500
 vim.opt.formatoptions = '1jcroql'
-vim.opt.textwidth = 80
+vim.opt.textwidth = 120
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.tabstop = 2
@@ -94,25 +94,24 @@ vim.opt.breakindentopt = 'shift:2,min:20'
 vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.number = true
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '120'
 vim.opt.foldenable = true
 vim.opt.signcolumn = 'yes'
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = 'niv'
+vim.opt.cursorline = true
 
-if vim.loop.os_uname().sysname == 'Darwin' then
-  vim.g.clipboard = {
-    name = 'macOS-clipboard',
-    copy = {
-      ['+'] = 'pbcopy',
-      ['*'] = 'pbcopy',
-    },
-    paste = {
-      ['+'] = 'pbpaste',
-      ['*'] = 'pbpaste',
-    },
-    cache_enabled = 0,
-  }
-  vim.g.python_host_prog = '/usr/bin/python'
-  vim.g.python3_host_prog = '/usr/local/bin/python3'
-end
+vim.g.clipboard = {
+  name = 'macOS-clipboard',
+  copy = {
+    ['+'] = 'pbcopy',
+    ['*'] = 'pbcopy',
+  },
+  paste = {
+    ['+'] = 'pbpaste',
+    ['*'] = 'pbpaste',
+  },
+  cache_enabled = 0,
+}
+vim.g.python_host_prog = '/usr/bin/python'
+vim.g.python3_host_prog = '/usr/local/bin/python3'
