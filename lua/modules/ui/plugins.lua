@@ -5,10 +5,9 @@
 local use = require('core.pack').register_plugin
 local conf = require('modules.ui.config')
 
+use({ 'olimorris/onedarkpro.nvim', config = conf.onedarkpro })
+use({ 'nvim-lualine/lualine.nvim', config = conf.lualine, requires = { 'kyazdani42/nvim-web-devicons', opt = true } })
 use({ 'psliwka/vim-smoothie' })
-use({ 'gelguy/wilder.nvim', config = conf.wilder })
-
-use({ 'wuelnerdotexe/vim-enfocado', config = conf.enfocado })
 
 use({ 'folke/todo-comments.nvim', config = conf.todo })
 use({ 'folke/trouble.nvim', config = conf.trouble })

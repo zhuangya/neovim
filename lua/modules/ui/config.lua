@@ -4,8 +4,44 @@
 
 local config = {}
 
-function config.wilder()
-  require('wilder').setup({ modes = { ':', '/', '?' } })
+function config.onedarkpro()
+  require("onedarkpro").setup({
+    dark_theme = 'onedark_vivid'
+  })
+
+vim.cmd("colorscheme onedarkpro")
+end
+
+function config.lualine()
+  require('lualine').setup({
+    options = {
+      icons_enabled = true,
+      theme = 'auto',
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
+      disabled_filetypes = {},
+      always_divide_middle = true,
+      globalstatus = true,
+    },
+    sections = {
+      lualine_a = { 'mode' },
+      lualine_b = { 'branch', 'diff', 'diagnostics' },
+      lualine_c = { 'filename' },
+      lualine_x = { 'encoding', 'fileformat', 'filetype' },
+      lualine_y = { 'progress' },
+      lualine_z = { 'location' },
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = { 'filename' },
+      lualine_x = { 'location' },
+      lualine_y = {},
+      lualine_z = {},
+    },
+    tabline = {},
+    extensions = {},
+  })
 end
 
 function config.alpha()
@@ -18,11 +54,6 @@ end
 
 function config.todo()
   require('todo-comments').setup({})
-end
-
-function config.enfocado()
-  vim.g.enfocado_style = 'neon'
-  vim.cmd('colorscheme enfocado')
 end
 
 function config.galaxyline()
