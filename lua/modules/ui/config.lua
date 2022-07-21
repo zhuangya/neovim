@@ -5,11 +5,11 @@
 local config = {}
 
 function config.onedarkpro()
-  require("onedarkpro").setup({
-    dark_theme = 'onedark_vivid'
+  require('onedarkpro').setup({
+    dark_theme = 'onedark_vivid',
   })
 
-vim.cmd("colorscheme onedarkpro")
+  vim.cmd('colorscheme onedarkpro')
 end
 
 function config.lualine()
