@@ -38,6 +38,18 @@ wk.register({
       end,
       'Code Action',
     },
+    f = {
+      function()
+        vim.lsp.buf.format()
+      end,
+      'Format',
+    },
+    k = {
+      function()
+        vim.lsp.buf.signature_help()
+      end,
+      'Signature'
+    },
   },
   n = {
     name = 'NeoFormat',
@@ -98,5 +110,20 @@ wk.register({
       end,
       'Implementation',
     },
+  },
+})
+
+wk.register({
+  ['K'] = {
+    function()
+      vim.lsp.buf.hover()
+    end,
+    'Hover',
+  },
+  ['D'] = {
+    function()
+      vim.lsp.buf.type_definition()
+    end,
+    'Type Def',
   },
 })
