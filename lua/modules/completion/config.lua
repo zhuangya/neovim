@@ -12,21 +12,21 @@ function config.nvim_lsp()
   require('nvim-lsp-installer').setup({})
 
   local servers = {
-    'tsserver',
-    'sumneko_lua',
-    'tailwindcss',
-    'rust_analyzer',
-    'sumneko_lua',
-    'clangd',
+    -- web:
     'cssls',
     'eslint',
     'graphql',
     'html',
     'jsonls',
-    'pyright',
     'tailwindcss',
     'tsserver',
     'zk',
+
+    -- other langs:
+    'rust_analyzer',
+    'sumneko_lua',
+    'clangd',
+    'pyright',
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -52,6 +52,7 @@ function config.nvim_lsp()
     Info = ' ',
     Hint = 'ﴞ ',
   }
+
   for type, icon in pairs(signs) do
     local hl = 'DiagnosticSign' .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -74,16 +75,30 @@ function config.nvim_lsp()
     api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   end
 
+  for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup({
+      on_attach = enhance_attach,
+    })
+  end
+
   lspconfig.sumneko_lua.setup({
     settings = {
       Lua = {
-        diagnostics = {
-          enable = true,
-          globals = { 'vim', 'packer_plugins' },
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
         },
-        runtime = { version = 'LuaJIT' },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = { 'vim' },
+        },
         workspace = {
-          library = vim.list_extend({ [vim.fn.expand('$VIMRUNTIME/lua')] = true }, {}),
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file('', true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
         },
       },
     },
@@ -95,11 +110,6 @@ function config.nvim_lsp()
       enhance_attach(client)
     end,
   })
-  for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup({
-      on_attach = enhance_attach,
-    })
-  end
 end
 
 function config.nvim_cmp()
