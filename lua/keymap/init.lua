@@ -48,7 +48,7 @@ wk.register({
       function()
         vim.lsp.buf.signature_help()
       end,
-      'Signature'
+      'Signature',
     },
   },
   n = {
