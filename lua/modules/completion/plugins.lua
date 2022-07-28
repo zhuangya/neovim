@@ -11,8 +11,19 @@ use({
 })
 
 use({
-  'williamboman/nvim-lsp-installer',
-  config = conf.lsp_installer,
+  'williamboman/mason.nvim',
+  config = function()
+    require('mason').setup({
+      ensure_installed = { 'sumneko_lua', 'rust_analyzer', 'tsserver' },
+    })
+  end,
+})
+
+use({
+  'williamboman/mason-lspconfig.nvim',
+  config = function()
+    require('mason-lspconfig').setup()
+  end,
 })
 
 use({
