@@ -40,8 +40,8 @@ use({
 })
 
 use({
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
   config = function()
-    require("lsp_lines").setup()
+    require('lsp_lines').setup()
   end,
 })

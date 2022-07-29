@@ -20,3 +20,10 @@ use({
   'sbdchd/neoformat',
   cmd = 'Neoformat',
 })
+
+use({
+  'zhuangya/im-select.nvim',
+  config = function()
+    require('im_select').setup()
+  end,
+})
