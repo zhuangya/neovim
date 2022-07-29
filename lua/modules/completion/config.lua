@@ -63,9 +63,7 @@ function config.nvim_lsp()
     update_in_insert = false,
     underline = true,
     severity_sort = true,
-    virtual_text = {
-      source = true,
-    },
+    virtual_text = false,
   })
 
   local enhance_attach = function(client, bufnr)

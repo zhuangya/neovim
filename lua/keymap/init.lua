@@ -50,6 +50,10 @@ wk.register({
       end,
       'Signature',
     },
+    d = {
+      require('lsp_lines').toggle,
+      'Toggle Lsp Lines',
+    },
   },
   n = {
     name = 'NeoFormat',
