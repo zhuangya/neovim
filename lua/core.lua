@@ -9,7 +9,6 @@ local basic_setup = function()
   g.mapleader = ' '
   g.maplocalleader = ' '
 
-  local opt = vim.opt;
   -- Cursor shape
   opt.gcr = {
     'i-c-ci-ve:blinkoff500-blinkon500-block-TermCursor',
