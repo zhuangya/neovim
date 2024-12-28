@@ -1,5 +1,6 @@
 return {
   'tpope/vim-sleuth', -- detect indent
+  require('layers.writing.lsp'),
   {
     'saghen/blink.cmp',
     dependencies = 'rafamadriz/friendly-snippets',
