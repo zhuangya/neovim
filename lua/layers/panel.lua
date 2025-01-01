@@ -1,52 +1,87 @@
+---@module 'snacks'
 return {
   {
-    'stevearc/oil.nvim',
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      bigfile = { enabled = true },
+      dashboard = { enabled = true },
+      indent = { enabled = true },
+      input = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = true, left = { "git", "mark" }, right = { "fold", "sign" } },
+      words = { enabled = true },
+    },
+    keys = {
+      {
+        "<leader>gg",
+        function()
+          Snacks.lazygit()
+        end,
+        desc = "(Lazy)Git",
+      },
+      {
+        "<leader>gl",
+        function()
+          Snacks.lazygit.log()
+        end,
+        desc = "Git log for this file",
+      },
+    },
+  },
+  {
+    "stevearc/oil.nvim",
     dependencies = {
-      { 'nvim-tree/nvim-web-devicons' },
+      { "nvim-tree/nvim-web-devicons" },
     },
     opts = {},
     keys = {
       {
-        '-',
-        '<CMD>Oil<CR>',
+        "-",
+        "<CMD>Oil<CR>",
         {
-          desc = 'open parent directory',
+          desc = "open parent directory",
         },
       },
     },
   },
   {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
       {
-        '<leader>ff',
+        "<leader>ff",
         function()
-          require('telescope.builtin').find_files()
+          require("telescope.builtin").find_files()
         end,
-        desc = 'find files'
+        desc = "find files",
       },
       {
-        '<leader>fb',
+        "<leader>fb",
         function()
-          require('telescope.builtin').buffers()
+          require("telescope.builtin").buffers()
         end,
-        desc = 'buffers'
+        desc = "buffers",
       },
       {
-        '<leader>fg',
+        "<leader>fg",
         function()
-          require('telescope.builtin').live_grep()
+          require("telescope.builtin").live_grep()
         end,
-        desc = 'Live Grep'
-      }
-    }
+        desc = "Live Grep",
+      },
+    },
   },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      preset = 'modern',
+      preset = "modern",
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
@@ -60,5 +95,5 @@ return {
         desc = "Buffer Local Keymaps (which-key)",
       },
     },
-  }
+  },
 }
