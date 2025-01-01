@@ -29,7 +29,7 @@ local basic_setup = function()
   opt.cursorline = true
   opt.scrolloff = 8
   opt.hlsearch = true
-  opt.signcolumn = "yes:3"
+  opt.signcolumn = "yes:2"
 end
 
 local ensure_lazy = function()
