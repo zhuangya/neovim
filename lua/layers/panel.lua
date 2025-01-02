@@ -1,6 +1,10 @@
 ---@module 'snacks'
 return {
   {
+    "kevinhwang91/nvim-bqf",
+    opts = {},
+  },
+  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
