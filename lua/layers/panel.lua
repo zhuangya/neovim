@@ -9,11 +9,11 @@ return {
       animate = { enabled = false },
       bigfile = { enabled = true },
       dashboard = { enabled = true },
-      indent = { enabled = true },
+      indent = { enabled = true, only_scope = true, only_current = true },
       input = { enabled = true },
       notifier = { enabled = true },
       quickfile = { enabled = true },
-      scroll = { enabled = true },
+      scroll = { enabled = false },
       statuscolumn = { enabled = true },
       words = { enabled = true },
     },
@@ -75,6 +75,13 @@ return {
           require("telescope.builtin").live_grep()
         end,
         desc = "Live Grep",
+      },
+      {
+        "<leader>fh",
+        function()
+          require("telescope.builtin").help_tags()
+        end,
+        desc = "Help!",
       },
     },
   },
