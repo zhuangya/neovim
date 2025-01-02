@@ -6,6 +6,7 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      animate = { enabled = false },
       bigfile = { enabled = true },
       dashboard = { enabled = true },
       indent = { enabled = true },
@@ -13,7 +14,7 @@ return {
       notifier = { enabled = true },
       quickfile = { enabled = true },
       scroll = { enabled = true },
-      statuscolumn = { enabled = true, left = { "git", "mark" }, right = { "fold", "sign" } },
+      statuscolumn = { enabled = true },
       words = { enabled = true },
     },
     keys = {
