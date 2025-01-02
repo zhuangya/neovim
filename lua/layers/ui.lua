@@ -5,7 +5,7 @@ return {
     priority = 999,
     opts = {
       "folke/tokyonight.nvim",
-      "wildcharm",
+      "rmehri01/onenord.nvim",
     },
   },
 
