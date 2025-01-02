@@ -1,6 +1,8 @@
 local on_attach = function(client, bufnr)
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
+  local function buf_set_option(name, value, opts)
+    opts = opts or {}
+    opts.buf = bufnr
+    vim.api.nvim_set_option_value(name, value, opts)
   end
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
