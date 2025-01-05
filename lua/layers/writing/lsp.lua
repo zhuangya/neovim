@@ -49,6 +49,12 @@ end
 
 return {
   {
+    "dmmulroy/tsc.nvim",
+    opts = {
+      use_diagnostics = false,
+    },
+  },
+  {
     "folke/lazydev.nvim",
     ft = "lua",
     opts = {
