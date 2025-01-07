@@ -1,6 +1,6 @@
 local has_telescope, telescope = pcall(require, "telescope")
 
-local set = vim.keymap.set
+local set = require("keymaps").set
 
 if has_telescope then
   local builtin = require("telescope.builtin")
@@ -47,9 +47,7 @@ if has_telescope then
   set("n", "<leader>fr", builtin.registers, { desc = "Registers" })
   set("n", "<leader>fc", builtin.command_history, { desc = "Cmd History" })
 
-  set("n", "<leader>ff", function()
-    builtin.find_files({ hidden = true })
-  end, { desc = "Find Files" })
+  set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
   set("n", "<leader>fb", function()
     builtin.buffers({
       ignore_current_buffer = true,
