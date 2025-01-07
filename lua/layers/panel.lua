@@ -57,36 +57,13 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    keys = {
-      {
-        "<leader>ff",
-        function()
-          require("telescope.builtin").find_files()
-        end,
-        desc = "find files",
-      },
-      {
-        "<leader>fb",
-        function()
-          require("telescope.builtin").buffers()
-        end,
-        desc = "buffers",
-      },
-      {
-        "<leader>fg",
-        function()
-          require("telescope.builtin").live_grep()
-        end,
-        desc = "Live Grep",
-      },
-      {
-        "<leader>fh",
-        function()
-          require("telescope.builtin").help_tags()
-        end,
-        desc = "Help!",
-      },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-project.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
+      "fdschmidt93/telescope-egrepify.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
   },
   {
