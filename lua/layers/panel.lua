@@ -18,7 +18,7 @@ return {
       notifier = { enabled = true },
       quickfile = { enabled = true },
       scroll = { enabled = false },
-      statuscolumn = { enabled = true },
+      statuscolumn = { enabled = false },
       words = { enabled = true },
     },
     keys = {

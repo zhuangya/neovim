@@ -1,24 +1,29 @@
 return {
-  'tpope/vim-sleuth', -- detect indent
-  require('layers.writing.lsp'),
+  "tpope/vim-sleuth", -- detect indent
+  require("layers.writing.lsp"),
   {
-    'saghen/blink.cmp',
-    dependencies = 'rafamadriz/friendly-snippets',
+    "saghen/blink.cmp",
+    dependencies = "rafamadriz/friendly-snippets",
 
-    build = 'cargo build --release',
+    build = "cargo build --release",
 
     opts = {
       sources = {
+        cmdline = {},
         default = {
-          'lazydev', 'lsp', 'path', 'snippets', 'buffer'
+          "lazydev",
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
         },
         providers = {
           lazydev = {
-            name = 'LazyDev',
-            module = 'lazydev.integrations.blink',
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
             score_offset = 100,
-          }
-        }
+          },
+        },
       },
       appearance = {
         use_nvim_cmp_as_default = true,

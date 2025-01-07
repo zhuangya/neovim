@@ -1,1 +1,1 @@
-require('core').start()
+require("core").start()

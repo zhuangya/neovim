@@ -24,6 +24,10 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { buffer = bufnr, noremap = true, silent = true }
+
+  vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("i", "<a-cr>", vim.lsp.buf.code_action, opts) -- same binding, just bound to "alt+enter" like in intellij
+
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -48,6 +52,14 @@ local on_attach = function(client, bufnr)
 end
 
 return {
+  {
+    "kosayoda/nvim-lightbulb",
+    opts = {
+      code_lenses = true,
+      autocmd = { enabled = true },
+      number = { enabled = true },
+    },
+  },
   {
     "dmmulroy/tsc.nvim",
     opts = {
