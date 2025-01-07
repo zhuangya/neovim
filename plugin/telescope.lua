@@ -23,6 +23,9 @@ if has_telescope then
     ["aerial"] = {
       show_columns = "both",
     },
+    ["import"] = {
+      insert_at_top = true,
+    },
   }
 
   local themes = require("telescope.themes")
@@ -45,6 +48,8 @@ if has_telescope then
   end, {
     desc = "colorscheme switcher",
   })
+
+  set("n", "<leader>fi", "<cmd>Telescope import<cr>", { desc = "Import Helper" })
 
   set("n", "<leader>fm", builtin.marks, { desc = "Marks" })
   set("n", "<leader>fr", builtin.registers, { desc = "Registers" })
