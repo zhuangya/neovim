@@ -20,6 +20,9 @@ if has_telescope then
       override_file_sorter = true,
       override_generic_sorter = true,
     },
+    ["aerial"] = {
+      show_columns = "both",
+    },
   }
 
   local themes = require("telescope.themes")
