@@ -2,6 +2,7 @@
   "aerial.nvim": { "branch": "master", "commit": "b3ec25ca8c347fafa976484a6cace162239112e1" },
   "blink.cmp": { "branch": "main", "commit": "80945db7a988f8eb5233bb1e4b409bb20177c7ac" },
   "conform.nvim": { "branch": "master", "commit": "70019124aa4f2e6838be9fbd2007f6d13b27a96d" },
+  "eldritch.nvim": { "branch": "master", "commit": "dbfbaedfdf7b3d40050015fc16dca6aedc97d756" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "gitsigns.nvim": { "branch": "main", "commit": "2eaa30537365f6889c850bd46ef6f18ddf8fac70" },
   "lazy.nvim": { "branch": "main", "commit": "d8f26efd456190241afd1b0f5235fe6fdba13d4a" },
