@@ -41,6 +41,12 @@ if has_telescope then
     telescope.load_extension(ext)
   end
 
+  set("n", "<leader>sp", function()
+    builtin.spell_suggest()
+  end, {
+    desc = "spell suggestion",
+  })
+
   set("n", "<leader>fx", function()
     builtin.colorscheme({
       enable_preview = true,

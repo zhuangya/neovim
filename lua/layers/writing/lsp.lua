@@ -55,6 +55,9 @@ end
 
 return {
   {
+    "mfussenegger/nvim-lint",
+  },
+  {
     "kosayoda/nvim-lightbulb",
     opts = {
       code_lenses = true,
