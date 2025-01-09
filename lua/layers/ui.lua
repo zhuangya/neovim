@@ -1,14 +1,13 @@
 return {
   {
-    "lmantw/themify.nvim",
+    "eldritch-theme/eldritch.nvim",
     lazy = false,
-    priority = 999,
-    opts = {
-      "folke/tokyonight.nvim",
-      "rmehri01/onenord.nvim",
-    },
+    priority = 1000,
+    opts = {},
+    init = function()
+      vim.cmd([[colorscheme eldritch]])
+    end,
   },
-
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
