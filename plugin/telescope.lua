@@ -26,6 +26,7 @@ if has_telescope then
     ["import"] = {
       insert_at_top = true,
     },
+    ["undo"] = {},
   }
 
   local themes = require("telescope.themes")
@@ -41,6 +42,9 @@ if has_telescope then
     telescope.load_extension(ext)
   end
 
+  set("n", "<leader>fu", function()
+    telescope.extensions.undo.undo({ side_by_side = true })
+  end, { desc = "Undo" })
   set("n", "<leader>fx", function()
     builtin.colorscheme({
       enable_preview = true,

@@ -65,6 +65,7 @@ return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = {
+      "debugloop/telescope-undo.nvim",
       "fdschmidt93/telescope-egrepify.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-frecency.nvim",
