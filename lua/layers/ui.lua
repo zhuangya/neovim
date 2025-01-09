@@ -17,6 +17,7 @@ return {
     "lewis6991/gitsigns.nvim",
     init = function()
       local gitsigns = require("gitsigns")
+      local set = require("keymaps").set
 
       gitsigns.setup({
         on_attach = function(bufnr)
@@ -25,7 +26,7 @@ return {
             local desc = opts.desc or ""
             opts.buffer = bufnr
             opts.desc = "GitSign::" .. desc
-            vim.keymap.set(mode, l, r, opts)
+            set(mode, l, r, opts)
           end
 
           local function nav(direction)
@@ -52,6 +53,13 @@ return {
 
           map("n", "(", prev, { desc = "nav to prev" })
           map("n", ")", next, { desc = "nav to next" })
+
+          map("n", "<leader>hb", function()
+            gitsigns.blame_line({ full = true })
+          end, { desc = "hunk blame" })
+          map("n", "<leader>hd", gitsigns.diffthis, { desc = "diff this" })
+          map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "stage hunk" })
+          map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "reset hunk" })
         end,
       })
     end,
