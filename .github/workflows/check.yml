@@ -1,6 +1,9 @@
 name: lua check
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "**.lua"
 
 jobs:
   check:
