@@ -1,0 +1,12 @@
+name: lua check
+
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    name: Check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lunarmodules/luacheck@v1.2.0
+        with:
+          args: --globals vim Snacks -- .
