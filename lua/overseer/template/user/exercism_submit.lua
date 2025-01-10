@@ -1,7 +1,6 @@
 return {
   name = "Exercism Submit",
   builder = function()
-    local file = vim.fn.expand("%:.")
     return {
       cmd = { "exercism" },
       args = { "submit" },
