@@ -1,6 +1,50 @@
 ---@module 'snacks'
 return {
   {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    opts = {
+      graph_style = "kitty",
+      process_spinner = true,
+      kind = "split",
+    },
+    keys = {
+      {
+        "<leader>gg",
+        "<cmd>Neogit<cr>",
+        desc = "Neogit",
+      },
+
+      {
+        "<leader>gl",
+        "<cmd>NeogitLogCurrent<cr>",
+        desc = "Neogit Log Current",
+      },
+    },
+  },
+  {
+    "stevearc/overseer.nvim",
+    opts = {
+      templates = { "builtin", "user.lua_busted" },
+    },
+    keys = {
+      {
+        "<leader>or",
+        "<cmd>OverseerRun<cr>",
+        desc = "Overseer Run!",
+      },
+      {
+        "<leader>oq",
+        "<cmd>OverseerQuickAction<cr>",
+        desc = "Overseer Quick Action",
+      },
+    },
+  },
+  {
     "kevinhwang91/nvim-bqf",
     opts = {},
   },
@@ -15,6 +59,7 @@ return {
       dashboard = { enabled = true },
       indent = { enabled = true, only_scope = true, only_current = true },
       input = { enabled = true },
+      lazygit = { enabled = false },
       notifier = { enabled = true },
       quickfile = { enabled = true },
       scroll = { enabled = false },
@@ -28,20 +73,6 @@ return {
           Snacks.notifier.show_history()
         end,
         desc = "notification history",
-      },
-      {
-        "<leader>gg",
-        function()
-          Snacks.lazygit()
-        end,
-        desc = "(Lazy)Git",
-      },
-      {
-        "<leader>gl",
-        function()
-          Snacks.lazygit.log()
-        end,
-        desc = "Git log for this file",
       },
     },
   },
