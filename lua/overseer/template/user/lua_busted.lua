@@ -1,7 +1,7 @@
 return {
   name = "Lua Busted Test",
   builder = function()
-    local file = vim.fn.expand("%:h")
+    local file = vim.fn.expand("%:.")
     return {
       cmd = { "busted" },
       args = { file },

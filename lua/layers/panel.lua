@@ -29,7 +29,7 @@ return {
   {
     "stevearc/overseer.nvim",
     opts = {
-      templates = { "builtin", "user.lua_busted" },
+      templates = { "builtin", "user.lua_busted", "user.exercism_submit" },
     },
     keys = {
       {
