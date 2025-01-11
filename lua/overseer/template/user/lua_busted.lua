@@ -1,10 +1,9 @@
 return {
   name = "Lua Busted Test",
   builder = function()
-    local file = vim.fn.expand("%:.")
     return {
       cmd = { "busted" },
-      args = { file },
+      cwd = vim.fn.expand("%:p:h"),
       components = { "open_output", "default" },
     }
   end,
