@@ -8,7 +8,7 @@ if has_lint then
   vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     callback = function()
       lint.try_lint()
-      lint.try_lint("cspell")
+      -- lint.try_lint("cspell")
     end,
   })
 end
