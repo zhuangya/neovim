@@ -5,7 +5,6 @@ return {
       cmd = { "exercism" },
       args = { "submit" },
       -- TODO: maybe parse the output and open the exercism url?
-      cwd = vim.fn.expand("%:p:h"),
       components = { "open_output", "default" },
     }
   end,
