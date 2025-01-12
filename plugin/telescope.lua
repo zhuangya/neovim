@@ -77,12 +77,7 @@ if has_telescope then
       display_type = "full",
     })
   end, { desc = "Project" })
-  set(
-    "n",
-    "<leader>f.",
-    '<cmd>Telescope frecency workspace=CWD path_display={"shorten"} theme=ivy<cr>',
-    { desc = "recent files" }
-  )
+  set("n", "<leader>f.", '<cmd>Telescope frecency path_display={"shorten"} theme=ivy<cr>', { desc = "recent files" })
   -- lsp related mappings:
   set("n", "<leader>ld", builtin.lsp_definitions, { desc = "[LSP] definitions" })
   set("n", "<leader>lr", builtin.lsp_references, { desc = "[LSP] references" })

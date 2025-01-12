@@ -141,7 +141,9 @@ return {
 
       local lspconfig = require("lspconfig")
 
-      lspconfig.gleam.setup({})
+      lspconfig.gleam.setup({
+        on_attach = on_attach,
+      })
 
       lspconfig.lua_ls.setup({
         on_attach = on_attach,
