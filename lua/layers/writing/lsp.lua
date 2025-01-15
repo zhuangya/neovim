@@ -149,6 +149,9 @@ return {
         on_attach = on_attach,
         settings = {
           Lua = {
+            runtime = {
+              version = "5.4",
+            },
             diagnostics = {
               globals = { "vim" },
             },

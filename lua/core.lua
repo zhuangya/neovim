@@ -47,7 +47,7 @@ local auto_chdir = function()
   -- source: https://www.reddit.com/r/neovim/comments/zy5s0l/you_dont_need_vimrooter_usually_or_how_to_set_up/
 
   -- Array of file names indicating root directory. Modify to your liking.
-  local root_names = { ".git", "Makefile", "gleam.toml" }
+  local root_names = { ".git", "Makefile", "gleam.toml", "README.md" }
 
   -- Cache to use for speed up (at cost of possibly outdated results)
   local root_cache = {}
