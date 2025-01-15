@@ -16,12 +16,18 @@ return {
           "path",
           "snippets",
           "buffer",
+          "markdown",
         },
         providers = {
           lazydev = {
             name = "LazyDev",
             module = "lazydev.integrations.blink",
             score_offset = 100,
+          },
+          markdown = {
+            name = "RenderMarkdown",
+            module = "render-markdown.integ.blink",
+            fallbacks = { "lsp" },
           },
         },
       },
