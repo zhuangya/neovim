@@ -39,6 +39,7 @@ return {
         "user.lua_busted",
         "user.exercism_submit",
         "user.gleam_test",
+        "user.run_love",
       },
     },
     keys = {
