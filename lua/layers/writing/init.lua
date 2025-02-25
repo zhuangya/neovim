@@ -9,7 +9,6 @@ return {
 
     opts = {
       sources = {
-        cmdline = {},
         default = {
           "lazydev",
           "lsp",
